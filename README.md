@@ -9,9 +9,9 @@ A Claude Code skill for consequential work: decisions, designs, research, and ch
 Seven steps, each ending in an artifact the user can see:
 
 1. **Frame**: one sentence naming who, what, the measurable outcome, and the constraints.
-2. **Reduce to facts**: first principles. Sort facts from assumptions from conventions; write the goal as an equation; find the theoretical limit.
-3. **Benchmark**: check prior art and reference companies before building. Decide adopt / adapt / build.
-4. **Structure**: MECE. One dimension per layer, overlap test, gap test.
+2. **Reduce to essentials**: first principles. Name what the thing fundamentally is and what need it serves; sort facts from assumptions from conventions; write the goal as an equation; find the theoretical limit.
+3. **Benchmark**: check prior art before building, both artifacts (systems, products, companies) and methods (frameworks, standards, playbooks). Decide adopt / adapt / build.
+4. **Structure**: MECE. One dimension per layer, the primary dimension first, overlap test, gap test.
 5. **Build minimal**: only what was asked, every step paired with its verification.
 6. **Attack**: pre-mortem, strongest opposition, flip conditions. Findings graded fatal / major / minor.
 7. **Deliver**: conclusion first, then evidence, prior art, assumptions, risks, next steps, sources.
