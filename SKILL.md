@@ -75,7 +75,7 @@ Where to look, by domain:
 
 **Process, management, compliance.** Mostly methods: the standard's own text, official guidance, and published handbooks of well-run organisations. Artifacts: organisations known for running this process well.
 
-Rules: two independent sources for each load-bearing claim, traced to the primary; record the retrieval date; label each as evidence-backed or merely popular. Stop when more research would not change the decision.
+Rules: two independent sources for each load-bearing claim, traced to the primary; record the retrieval date; label each as evidence-backed or merely popular. A source you cannot reach is replaced by another copy of the same content (the project's own repository, an official mirror, a cached page), never by a weaker source. Stop when more research would not change the decision.
 
 Artifact: a source list with dates, each entry marked artifact or method, plus the adopt / adapt / build decision or the reference table.
 
