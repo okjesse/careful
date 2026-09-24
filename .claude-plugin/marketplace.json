@@ -1,0 +1,12 @@
+{
+  "name": "rigor",
+  "owner": { "name": "okjesse" },
+  "description": "The rigor skill for Claude Code: first principles, prior art, MECE, minimal execution, adversarial review.",
+  "plugins": [
+    {
+      "name": "rigor",
+      "source": "./",
+      "description": "Rigorous decision and delivery process: first principles, prior art, MECE, minimal execution, adversarial review."
+    }
+  ]
+}

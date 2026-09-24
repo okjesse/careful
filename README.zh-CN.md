@@ -30,19 +30,32 @@
 
 ## 安装
 
-全局，所有项目可用：
+作为 plugin 安装（推荐，之后用 `/plugin marketplace update` 拿更新）：
+
+```
+/plugin marketplace add okjesse/rigor
+/plugin install rigor@rigor
+```
+
+这种装法调用名是 `/rigor:rigor`。
+
+用 git clone，全局所有项目可用：
 
 ```bash
 git clone https://github.com/okjesse/rigor ~/.claude/skills/rigor
 ```
 
-单个项目：
+或只装到一个项目：
 
 ```bash
 git clone https://github.com/okjesse/rigor .claude/skills/rigor
 ```
 
-在 Claude Code 里输入 `/rigor` 调用。涉及方案设计、选型、调研、上线或不可逆改动的任务，Claude 也会自动触发。
+一台机器只用一种装法。clone 的副本和 plugin 同名会冲突，只有 plugin 那份会加载。
+
+发新版本时改 `.claude-plugin/plugin.json` 里的 `version`，plugin 用户只在版本号变化时收到更新。
+
+这种装法调用名是 `/rigor`。两种装法下，涉及方案设计、选型、调研、上线或不可逆改动的任务，Claude 都会自动触发。
 
 ## 关于语言
 

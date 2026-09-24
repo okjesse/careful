@@ -20,19 +20,32 @@ Depth scales with stakes. Small, reversible tasks skip the skill entirely. Large
 
 ## Install
 
-For every project:
+As a plugin (recommended, gets updates with `/plugin marketplace update`):
+
+```
+/plugin marketplace add okjesse/rigor
+/plugin install rigor@rigor
+```
+
+Installed this way the skill is invoked as `/rigor:rigor`.
+
+By git clone, for every project:
 
 ```bash
 git clone https://github.com/okjesse/rigor ~/.claude/skills/rigor
 ```
 
-For one project:
+or for one project:
 
 ```bash
 git clone https://github.com/okjesse/rigor .claude/skills/rigor
 ```
 
-Invoke with `/rigor`, or let Claude trigger it on design, selection, research, and consequential code changes.
+Pick one install method per machine. A cloned copy and an installed plugin with the same name conflict, and only the plugin loads.
+
+To release a new version, bump `version` in `.claude-plugin/plugin.json`. Plugin users only receive updates when it changes.
+
+Installed this way the skill is invoked as `/rigor`. Either way, Claude also triggers it on design, selection, research, and consequential code changes.
 
 ## Language
 
