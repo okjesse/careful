@@ -1,35 +1,41 @@
 # rigor
 
-一个 Claude Code skill：严谨决策与交付流程。
+A Claude Code skill for consequential work: decisions, designs, research, and changes that are expensive to get wrong.
 
-第一性原理拆解 → 先查最佳实践 / 对标 → MECE 结构化 → 最简执行 → 对抗式审查 → 结论先行交付。
+[中文说明](README.zh-CN.md)
 
-防四种常见错误：想当然、重复造轮子、结构混乱、自我感觉良好。
+## What it does
 
-## 安装
+Seven steps, each ending in an artifact the user can see:
 
-个人全局（所有项目可用）：
+1. **Frame**: one sentence naming who, what, the measurable outcome, and the constraints.
+2. **Reduce to facts**: first principles. Sort facts from assumptions from conventions; write the goal as an equation; find the theoretical limit.
+3. **Benchmark**: check prior art and reference companies before building. Decide adopt / adapt / build.
+4. **Structure**: MECE. One dimension per layer, overlap test, gap test.
+5. **Build minimal**: only what was asked, every step paired with its verification.
+6. **Attack**: pre-mortem, strongest opposition, flip conditions. Findings graded fatal / major / minor.
+7. **Deliver**: conclusion first, then evidence, prior art, assumptions, risks, next steps, sources.
+
+Depth scales with stakes. Small, reversible tasks skip the skill entirely. Large tasks send the attack to an independent subagent.
+
+## Install
+
+For every project:
 
 ```bash
 git clone https://github.com/okjesse/rigor ~/.claude/skills/rigor
 ```
 
-单个项目：
+For one project:
 
 ```bash
 git clone https://github.com/okjesse/rigor .claude/skills/rigor
 ```
 
-安装后在 Claude Code 里输入 `/rigor` 手动调用。涉及方案设计、技术选型、调研分析、上线或不可逆改动的任务，Claude 也会自动触发。
+Invoke with `/rigor`, or let Claude trigger it on design, selection, research, and consequential code changes.
 
-## 什么时候用
+## Language
 
-- 方案设计、架构决策、技术选型
-- 调研、对标、商业判断
-- 要花钱、上线、对外承诺、不可逆的开发改动
+The skill body is English because Claude reads it, not people. Replies follow the language of the conversation, and the description carries Chinese trigger phrases so Chinese prompts match reliably.
 
-一次性、可逆、几分钟能做完的小事不用。
-
-## 内容
-
-见 [SKILL.md](SKILL.md)。
+See [SKILL.md](SKILL.md) for the full process.

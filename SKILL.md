@@ -1,126 +1,123 @@
 ---
 name: rigor
-description: "严谨决策与交付流程：第一性原理拆解 → 先查最佳实践/对标 → MECE 结构化 → 最简执行 → 对抗式审查 → 结论先行交付。只要任务涉及方案设计、技术选型、架构决策、调研分析、商业判断、或要上线/花钱/对外/不可逆的开发改动，就用这个 skill，哪怕用户没有明说要「严谨」「审查」「对标」。用户提到「帮我想清楚」「有没有更好的做法」「别人怎么做的」「有什么坑」「帮我把关」时也要触发。一次性、可逆、几分钟能做完的小事不用。"
+description: Rigorous decision and delivery process for consequential work. Frames the problem, reduces it to verified facts (first principles), checks prior art and benchmarks before building, structures the analysis MECE, executes minimally, attacks the result adversarially, and delivers conclusion-first with stated risks. Use for solution design, architecture and technology choices, research and benchmarking, business decisions, and any code change that costs money, ships to production, faces outside parties, or is hard to reverse. Also use when the user asks to think something through, wants to know how others solve it, asks what could go wrong, or asks for a sanity check (中文触发语：帮我想清楚、别人怎么做的、有什么坑、帮我把关). Skip for one-off, reversible tasks that take minutes.
 ---
 
 # Rigor
 
-这套流程防四种常见错误：
+Consequential work fails in five ways. Each step below closes one of them, and each step ends in an artifact the user can see. No artifact means the step was not done.
 
-| 错误 | 表现 | 对应步骤 |
+| Failure | Looks like | Closed by |
 | --- | --- | --- |
-| 想当然 | 把假设当事实，把惯例当必需 | 第一性原理 |
-| 重复造轮子 | 没查就自研，或选了没人维护的方案 | 最佳实践 / 对标 |
-| 结构混乱 | 分类重叠、遗漏，结论无法追溯 | MECE |
-| 自我感觉良好 | 交付前没人攻击过方案 | 对抗式审查 |
+| Wrong premise | An assumption or convention treated as fact | 2. Reduce |
+| Reinvention | Building what already exists, or picking an unmaintained option | 3. Benchmark |
+| Broken structure | Overlapping or missing categories; a conclusion nobody can trace | 4. Structure |
+| Over-building | Unrequested features, abstractions, or changes | 5. Build |
+| Unchallenged result | Nobody attacked it before delivery | 6. Attack |
 
-## 按风险决定走多深
+## Depth by stakes
 
-先判级，再动手。判级本身写一句话给用户看。
+Decide the tier first and state it to the user in one line.
 
-- **小事**（一次性、可逆、几分钟）：直接做，不走流程。
-- **中等**（要花半天以上，或影响别人）：每步走简版，审查自己做。
-- **大事**（花钱、上线、对外承诺、不可逆、涉及安全或合规）：全套流程，对抗式审查交给独立子代理，子代理只看成果不看推导过程。
+- **Small** (one-off, reversible, done in minutes): skip this skill.
+- **Medium** (half a day or more, or affects other people): every step in short form; run the attack yourself.
+- **Large** (costs money, ships to production, commits to outside parties, hard to reverse, touches security or compliance): full process; the attack goes to an independent subagent that sees the frame and the result but not the reasoning.
 
-## 0. 先把问题说清楚
+Medium and large tiers: copy this checklist and tick items as you go.
 
-不假设，不藏困惑。
-
-- 改写成一句话：为【谁】解决【什么】，成功标准是【可衡量的结果】，约束是【时间 / 钱 / 技术 / 合规】。
-- 有多种理解就并列列出并问用户，不要默默挑一个。
-- 分清用户要的是**手段**还是**目的**。用户说"加个缓存"，先问清是为了降延迟、省成本还是抗峰值。
-- 找不到用户时，写明采用的假设，继续做，交付时把假设放在最前面。
-
-## 1. 第一性原理：拆到事实，再往上推
-
-- 把已知信息分三类：**事实**（可验证）/ **假设**（待验证）/ **惯例**（"大家都这么做"）。惯例不是事实。
-- 把目标写成公式：收入 = 流量 × 转化 × 客单价；延迟 = 网络 + 排队 + 计算。公式的每一项就是后面 MECE 的第一层。
-- 问理论极限：物理、成本、法规允许的最好情况是什么？现状与极限的差距就是机会，也顺手检查方案有没有违反硬约束。
-- 对关键假设连问"为什么必须这样"，直到落在事实上，或发现它只是惯例。是惯例的，标出来，后面拿最佳实践验证。
-
-## 2. 先找最佳实践和对标，再动手
-
-第一性原理负责判断对错，最佳实践负责少走弯路。两者都要，顺序是先判断再借鉴。
-
-### 技术类：先搜现成的
-
-```bash
-gh search repos "<关键词>" --sort=stars --limit=20
-gh search repos "<关键词>" --stars=">500" --updated=">YYYY-MM-DD"   # 近一年
-gh search code "<函数名/配置名>" --language=<语言>                # 看别人实际怎么写
+```
+Rigor (tier: ___)
+- [ ] 1 Frame
+- [ ] 2 Reduce to facts
+- [ ] 3 Benchmark
+- [ ] 4 Structure (MECE)
+- [ ] 5 Build minimal
+- [ ] 6 Attack
+- [ ] 7 Deliver
 ```
 
-网页搜索语法：`stars:>500 pushed:>YYYY-MM-DD language:<语言> in:readme <关键词>`。
-再看：官方文档与规范、`awesome-<主题>` 列表、项目 Issues（别人踩过的坑）。
+Reply in the user's language. Headings, artifacts and the delivery template follow the conversation's language, not this file's.
 
-选型四项检查：最近是否还在维护、有没有真实用户、是否只靠一个维护者、许可证能否商用。
-结论三选一：**用现成 / 改现成 / 自研**。选自研必须写明现成方案为什么不行。
+## 1. Frame
 
-### 业务类：先找全球最好的对标
+Rewrite the request as one sentence: for **whom**, solve **what**, success is **a measurable outcome**, within **constraints** (time, money, technology, compliance).
 
-- 至少三类：**全球标杆**、**直接同类**（同赛道同阶段）、**跨行业类比**（别的行业怎么解决同一个底层问题）。
-- 优先一手资料：年报和招股书、官网与定价页、创始人访谈、用户差评（差评往往就是机会）、招聘岗位（反推对方在押注什么）。
-- 每家对标回答四个问题：怎么赚钱？为什么成功？它成功依赖的前提我们有没有？哪些能借鉴？
+- Several readings possible: list them and ask. Never pick one silently.
+- Separate means from ends. "Add a cache" is a means; ask whether the end is latency, cost, or peak load.
+- User unavailable: state the assumption, proceed, and put it first in the delivery.
 
-### 其他类（管理、流程、合规）
+Artifact: the one-sentence frame.
 
-先看标准原文、官方指引，以及优秀组织公开的手册。
+## 2. Reduce to facts (first principles)
 
-### 调研纪律
+- Sort what you know into **facts** (verifiable), **assumptions** (need checking), and **conventions** ("everyone does it this way"). A convention is not a fact.
+- Write the goal as an equation: revenue = traffic × conversion × order value; latency = network + queue + compute. The terms become the first layer of the tree in step 4.
+- Ask for the theoretical limit under physics, cost, and law. The gap between now and the limit is the opportunity. It also exposes a plan that violates a hard constraint.
+- For each load-bearing assumption ask "why must it be so" until you reach a fact or find it is only a convention. Conventions go to step 3 to be tested against prior art.
 
-- 关键结论至少 2 个独立来源，追到一手出处，标注查询日期。
-- 区分"有证据的最佳实践"和"只是流行"。
-- 设停止条件：再查也不会改变决策时就停。
+Artifact: the three-bucket list and the equation.
 
-## 3. MECE：不重叠，不遗漏
+## 3. Benchmark before building
 
-- 每一层只按**一个维度**拆：公式项、流程 / 时间、对象、内部 vs 外部、可控 vs 不可控。
-- 互斥检查：随便拿一项，看能不能同时归进两类。能，说明维度混了。
-- 穷尽检查：加一个"其他"。如果"其他"很大或说不清装了什么，说明漏了类别。
-- 经验值：最多 3 层，每层 3 到 7 项。
-- 写方案时，MECE 树就是"依据"部分的骨架。
+First principles decide what is right. Prior art keeps you from paying for known mistakes. Do both, in that order.
 
-## 4. 最简执行，可验证
+**Technical.** Search for existing solutions before writing any. Use `gh search repos` and `gh search code` when `gh` is installed; otherwise web search with `stars:>500 pushed:>YYYY-MM-DD language:<lang> <keywords>` (a date within the past year). Also read official docs and specs, `awesome-<topic>` lists, and candidates' issue trackers, which record other people's incidents.
+Check each candidate: maintained recently, real users, more than one maintainer, licence permits the use. Decide **adopt / adapt / build**. Choosing build requires a written reason why the existing options fail.
 
-用最少的东西解决问题，没被要求的不做。
+**Business.** Find at least three references: the global best, a direct peer (same market, same stage), and a cross-industry analogue solving the same underlying problem. Prefer primary sources: annual reports and filings, pricing pages, founder interviews, negative reviews (often the opportunity), job postings (where they are investing). For each, answer: how do they make money, why did it work, do we have the preconditions, what transfers.
 
-- 不加没被要求的功能、配置、抽象。能写 50 行就不写 200 行。
-- 只改必须改的地方，沿用现有风格。无关问题只指出，不顺手改。
-- 先定完成标准再动手：修 bug 先写复现测试；做分析先写清要回答哪几个决策问题。
-- 多步任务写成 `步骤 → 验证方式`，每一步都有可观察的结果。
+**Process, management, compliance.** The standard's own text, official guidance, and published handbooks of well-run organisations.
 
-## 5. 对抗式审查（交付前必做）
+Rules: two independent sources for each load-bearing claim, traced to the primary; record the retrieval date; label each as evidence-backed or merely popular. Stop when more research would not change the decision.
 
-把自己换成最挑剔的对手，目标是把方案打穿，不是确认它没问题。
+Artifact: a source list with dates plus the adopt / adapt / build decision, or the reference table.
 
-**三个固定动作：**
+## 4. Structure (MECE)
 
-1. **事前验尸**：假设一年后这个方案彻底失败了，最可能的 3 个原因是什么？
-2. **最强反方**：写出反对结论的最强论证。写不出来说明还没理解反方。
-3. **翻转条件**：哪 1 到 3 个事实一旦成立，结论就要反过来？去核实最关键的那个。
+- Each layer splits on one dimension only: equation terms, process stage, object, internal vs external, controllable vs not.
+- Overlap test: pick any item. If it fits two categories, dimensions are mixed.
+- Gap test: add "other". If "other" is large, or you cannot say what is in it, a category is missing.
+- At most three layers, three to seven items per layer.
 
-**快速检查清单：**
+Artifact: the tree. It becomes the evidence section of the delivery.
 
-- 数字有没有一手来源、口径是否一致。
-- 有没有幸存者偏差；是不是把相关当成了因果。
-- 信息有没有过期；来源有没有利益立场。
-- 有没有更简单的方案被漏掉。
-- 代码另加：边界值、失败路径、并发、安全、测试是否真的跑过。
+## 5. Build minimal, verifiable
 
-**分级处理：** 问题分**致命 / 重要 / 次要**。致命问题没解决不交付。重要问题要么修掉，要么明确告诉用户。次要问题列出即可。
+- Nothing that was not asked for: no extra features, configuration, or abstraction. Fifty lines beat two hundred.
+- Change only what must change, in the existing style. Report unrelated problems; do not fix them in passing.
+- Define done before starting: a failing test for a bug fix; the decision questions for an analysis.
+- Write multi-step work as `step → how it is verified`.
 
-**大事的独立审查：** 派一个子代理，只给它成果和问题定义，不给推导过程，让它按上面三个动作攻击。它找到的致命问题回到对应步骤重做。
+Artifact: the step list with each verification actually run.
 
-## 6. 交付
+## 6. Attack
 
-分析和决策类，按这个顺序写：
+Switch sides. The goal is to break the result, not to confirm it.
 
-**结论 → 依据（MECE 树）→ 参考的对标 / 实践 → 关键假设 → 风险与翻转条件 → 下一步 → 来源（含查询日期）**
+Three fixed moves:
 
-代码类：改了什么、怎么验证的、还剩什么风险。
+1. **Pre-mortem.** It is a year later and this failed completely. Name the three most likely causes.
+2. **Strongest opposition.** Write the best argument for the opposite conclusion. If you cannot, you do not yet understand the other side.
+3. **Flip conditions.** Name one to three facts that, if true, reverse the conclusion. Verify the most important one now.
 
-交付物主动写明"最可能错在哪"。没有这一段，说明第 5 步没做。
+Then the checklist: every number has a primary source and a consistent definition; no survivorship bias; correlation not read as cause; nothing out of date; each source's interest noted; no simpler option overlooked. For code add: boundary values, failure paths, concurrency, security, tests actually run.
+
+Grade findings **fatal / major / minor**. Fatal blocks delivery. Major is fixed or told to the user explicitly. Minor is listed.
+
+Large tier: hand the frame and the result, without the reasoning, to a subagent and have it run the three moves. A fatal finding sends you back to the step that produced it.
+
+Artifact: graded findings and a "where this is most likely wrong" section.
+
+## 7. Deliver
+
+Analysis and decisions, in this order:
+
+**Conclusion → Evidence (the MECE tree) → Prior art used → Key assumptions → Risks and flip conditions → Next steps → Sources with dates**
+
+Code: what changed, how it was verified, what risk remains.
+
+Every delivery states where it is most likely wrong. A delivery without that section means step 6 was skipped.
 
 ---
 
-**流程在起作用的信号：** 澄清在动手前完成；方案里有明确的对标和来源；结构没有重叠；改动小，返工少；交付物写明了可能错在哪。
+Signs it is working: clarification happens before work; the plan names concrete references and sources; categories do not overlap; changes are small and rework is rare; deliverables say where they might be wrong.
