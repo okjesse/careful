@@ -1,9 +1,9 @@
 ---
-name: rigor
+name: careful
 description: Rigorous decision and delivery process for consequential work. Frames the problem, reduces it to verified facts (first principles), checks prior art and benchmarks before building, structures the analysis MECE, executes minimally, attacks the result adversarially, and delivers conclusion-first with stated risks. Use for solution design, architecture and technology choices, research and benchmarking, business decisions, and any code change that costs money, ships to production, faces outside parties, or is hard to reverse. Also use when the user asks to think something through, wants to know how others solve it, asks what could go wrong, or asks for a sanity check (中文触发语：帮我想清楚、别人怎么做的、有什么坑、帮我把关). Skip for one-off, reversible tasks that take minutes.
 ---
 
-# Rigor
+# Careful
 
 Consequential work fails in five ways. Each step below closes one of them, and each step ends in an artifact the user can see. No artifact means the step was not done.
 
@@ -26,7 +26,7 @@ Decide the tier first and state it to the user in one line.
 Medium and large tiers: copy this checklist and tick items as you go.
 
 ```
-Rigor (tier: ___)
+Careful (tier: ___)
 - [ ] 1 Frame
 - [ ] 2 Reduce to facts
 - [ ] 3 Benchmark

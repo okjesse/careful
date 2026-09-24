@@ -1,8 +1,8 @@
 {
-  "name": "rigor",
+  "name": "careful",
   "version": "1.0.0",
   "description": "Rigorous decision and delivery process: first principles, prior art, MECE, minimal execution, adversarial review.",
   "author": { "name": "okjesse" },
-  "homepage": "https://github.com/okjesse/rigor",
-  "keywords": ["decision", "first-principles", "mece", "adversarial-review", "rigor"]
+  "homepage": "https://github.com/okjesse/careful",
+  "keywords": ["decision", "first-principles", "mece", "adversarial-review", "careful"]
 }

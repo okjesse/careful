@@ -1,4 +1,4 @@
-# rigor
+# careful
 
 A Claude Code skill for consequential work: decisions, designs, research, and changes that are expensive to get wrong.
 
@@ -23,29 +23,29 @@ Depth scales with stakes. Small, reversible tasks skip the skill entirely. Large
 As a plugin (recommended, gets updates with `/plugin marketplace update`):
 
 ```
-/plugin marketplace add okjesse/rigor
-/plugin install rigor@rigor
+/plugin marketplace add okjesse/careful
+/plugin install careful@careful
 ```
 
-Installed this way the skill is invoked as `/rigor:rigor`.
+Installed this way the skill is invoked as `/careful:careful`.
 
 By git clone, for every project:
 
 ```bash
-git clone https://github.com/okjesse/rigor ~/.claude/skills/rigor
+git clone https://github.com/okjesse/careful ~/.claude/skills/careful
 ```
 
 or for one project:
 
 ```bash
-git clone https://github.com/okjesse/rigor .claude/skills/rigor
+git clone https://github.com/okjesse/careful .claude/skills/careful
 ```
 
 Pick one install method per machine. A cloned copy and an installed plugin with the same name conflict, and only the plugin loads.
 
 To release a new version, bump `version` in `.claude-plugin/plugin.json`. Plugin users only receive updates when it changes.
 
-Installed this way the skill is invoked as `/rigor`. Either way, Claude also triggers it on design, selection, research, and consequential code changes.
+Installed this way the skill is invoked as `/careful`. Either way, Claude also triggers it on design, selection, research, and consequential code changes.
 
 ## Language
 
