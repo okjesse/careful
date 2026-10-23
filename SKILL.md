@@ -1,6 +1,6 @@
 ---
 name: careful
-description: Rigorous decision and delivery process for consequential work. Frames the problem, reduces it to verified facts (first principles), benchmarks the measured best and how it got there, structures the analysis MECE, attacks the result adversarially, and delivers conclusion-first with stated risks. Use for solution design, architecture and technology choices, research and benchmarking, business decisions, and any code change that costs money, ships to production, faces outside parties, or is hard to reverse. Also use when the user asks to think something through, wants to know how others solve it, asks what could go wrong, or asks for a sanity check (中文触发语：帮我想清楚、别人怎么做的、有什么坑、帮我把关). Skip for one-off, reversible tasks that take minutes.
+description: Rigorous decision and delivery process for consequential work. Frames the problem, reduces it to verified facts (first principles), benchmarks the measured best and how it got there, structures the analysis MECE, attacks the result adversarially, and delivers conclusion-first with stated risks. Use for solution design, architecture and technology choices, research and benchmarking, business decisions, and any code change that costs money, faces outside parties, or is hard to roll back once live. Also use when the user asks to think something through, wants to know how others solve it, asks what could go wrong, or asks for a sanity check (中文触发语：帮我想清楚、别人怎么做的、有什么坑、帮我把关). Skip for one-off, reversible tasks that take minutes.
 ---
 
 # Careful
@@ -14,7 +14,7 @@ Consequential work goes wrong in four ways. One principle closes each. Frame bef
 | Categories that overlap or leave gaps; a conclusion nobody can trace | 4. Structure (MECE) |
 | A result nobody tried to break | 5. Adversarial review |
 
-**Stakes.** Say the tier in one line before starting. Small (minutes, reversible): skip this skill. Medium (half a day or more, or affects other people): every step in short form. Large (money, production, outside parties, hard to reverse, security or compliance): full form, and the review goes to a subagent that sees the frame and the result but not the reasoning.
+**Stakes.** Say the tier in one line before starting. Small (minutes, reversible): skip this skill. Medium (half a day or more, or affects other people): every step in short form, one to three lines each; see [example.md](example.md). Large (money, production, outside parties, hard to reverse, security or compliance): full form, and step 5 goes to a subagent given only the frame sentence and the conclusion with its evidence, told to run step 5 and return graded findings.
 
 Reply in the user's language.
 
@@ -29,9 +29,9 @@ Artifact: the sentence.
 - **Essence.** Strip the current form and say what the thing fundamentally is: "X is a way to Y". Once the need is named, the current form is one option among several.
 - **Sort.** Facts (verifiable), assumptions (to check), conventions ("everyone does it this way"). A convention is not a fact; it goes to step 3 to be tested.
 - **Equation.** The goal as terms: revenue = traffic × conversion × order value. The terms become the first layer of step 4.
-- **Limit.** What physics, cost, and law allow. The gap to the limit is the opportunity; a plan past the limit is dead.
+- **Limit** (when one binds). What physics, cost, and law allow. The gap to the limit is the opportunity; a plan past the limit is dead.
 
-Artifact: the essence sentence, the three buckets, the equation, the limit.
+Artifact: the essence sentence, the three buckets, the equation, and the limit if one binds.
 
 ## 3. Benchmark
 
