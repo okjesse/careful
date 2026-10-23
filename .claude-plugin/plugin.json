@@ -1,7 +1,7 @@
 {
   "name": "careful",
-  "version": "2.0.0",
-  "description": "Rigorous decision and delivery process: first principles, prior art, MECE, minimal execution, adversarial review.",
+  "version": "2.1.0",
+  "description": "Rigorous decision and delivery process: first principles, benchmarking, MECE structure, adversarial review, conclusion-first delivery.",
   "author": {
     "name": "okjesse"
   },
@@ -11,6 +11,7 @@
     "decision",
     "first-principles",
     "mece",
+    "benchmark",
     "adversarial-review",
     "careful"
   ]

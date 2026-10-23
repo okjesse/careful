@@ -1,6 +1,6 @@
 ---
 name: careful
-description: Rigorous decision and delivery process for consequential work. Frames the problem, reduces it to verified facts (first principles), checks who has already solved it (best practice), structures the analysis MECE, attacks the result adversarially, and delivers conclusion-first with stated risks. Use for solution design, architecture and technology choices, research and benchmarking, business decisions, and any code change that costs money, ships to production, faces outside parties, or is hard to reverse. Also use when the user asks to think something through, wants to know how others solve it, asks what could go wrong, or asks for a sanity check (中文触发语：帮我想清楚、别人怎么做的、有什么坑、帮我把关). Skip for one-off, reversible tasks that take minutes.
+description: Rigorous decision and delivery process for consequential work. Frames the problem, reduces it to verified facts (first principles), benchmarks the measured best and how it got there, structures the analysis MECE, attacks the result adversarially, and delivers conclusion-first with stated risks. Use for solution design, architecture and technology choices, research and benchmarking, business decisions, and any code change that costs money, ships to production, faces outside parties, or is hard to reverse. Also use when the user asks to think something through, wants to know how others solve it, asks what could go wrong, or asks for a sanity check (中文触发语：帮我想清楚、别人怎么做的、有什么坑、帮我把关). Skip for one-off, reversible tasks that take minutes.
 ---
 
 # Careful
@@ -10,8 +10,8 @@ Consequential work goes wrong in four ways. One principle closes each. Frame bef
 | Goes wrong | Principle |
 | --- | --- |
 | Solving the wrong problem, or trusting a premise nobody checked | 2. First principles |
-| Rebuilding what exists, or copying a fashion | 3. Best practice |
-| Categories that overlap or leave gaps; a conclusion nobody can trace | 4. MECE |
+| Rebuilding what exists, or copying a fashion | 3. Benchmark |
+| Categories that overlap or leave gaps; a conclusion nobody can trace | 4. Structure (MECE) |
 | A result nobody tried to break | 5. Adversarial review |
 
 **Stakes.** Say the tier in one line before starting. Small (minutes, reversible): skip this skill. Medium (half a day or more, or affects other people): every step in short form. Large (money, production, outside parties, hard to reverse, security or compliance): full form, and the review goes to a subagent that sees the frame and the result but not the reasoning.
@@ -31,24 +31,24 @@ Artifact: the sentence.
 - **Equation.** The goal as terms: revenue = traffic × conversion × order value. The terms become the first layer of step 4.
 - **Limit.** What physics, cost, and law allow. The gap to the limit is the opportunity; a plan past the limit is dead.
 
-Artifact: the essence sentence, the three buckets, the equation.
+Artifact: the essence sentence, the three buckets, the equation, the limit.
 
-## 3. Best practice
+## 3. Benchmark
 
-Who has already solved this? Look for three kinds of artifacts and one kind of method:
+Best practice means a benchmark: a named, measured best, studied for how it got there. Find it in four moves:
 
-- **Best results**: the top instances of the outcome, found where success is measured (rankings, benchmarks, revenue, awards).
-- **Solutions** behind them: systems, products, codebases, companies.
-- **Practitioners** doing it now, in their own words: post-mortems, breakdowns, talks, issue trackers.
-- **Methods**: standards, playbooks, frameworks written for exactly this problem.
+1. **Metric.** Take the success measure from the frame. No metric, no benchmark.
+2. **Leaderboard.** Find where that metric is ranked: market share, revenue, benchmarks, stars and downloads, awards, published case studies. No public ranking: use the best documented case you can find and say so. Pick the top one to three, plus one cross-industry analogue that solved the same essence (step 2).
+3. **Reverse-engineer.** For each: what they did, why it worked, in practitioners' own words (post-mortems, talks, docs, code, issue trackers), read first-hand rather than via commentary.
+4. **Preconditions.** What they had that made it work, and whether we have it. Copy what transfers; no preconditions means a fashion, not a benchmark.
 
-Name specific ones; a category ("hit products", "top teams") is not a reference. Read the thing before commentary about it. Business: the global best, a direct peer, and a cross-industry analogue; for each, how it makes money, why it worked, whether we have the preconditions. Technical: search before writing (`gh search repos`, or web search filtered by stars and recent push); check maintained, used, licensed; decide **adopt / adapt / build**, and build needs a written reason.
+A category ("top teams") is not a benchmark; a name is. Technical work searches before writing (`gh search repos`, web search by stars and recent push), checks maintained, used, licensed, and decides **adopt / adapt / build**; build needs a written reason. Two independent, dated, primary sources per load-bearing claim. Stop when more research would not change the decision.
 
-Sources: two independent per load-bearing claim, traced to the primary, dated. An unreachable source is replaced by another copy of the same content, never a weaker source. Stop when more research would not change the decision.
+Artifact: the benchmarks with metric, source and date, what transfers, and the decision.
 
-Artifact: a dated source list, each entry marked result / solution / practitioner / method, and the decision.
+## 4. Structure (MECE)
 
-## 4. MECE
+Structured thinking: break the problem into parts that do not overlap and leave nothing out, so the conclusion can be traced.
 
 - One dimension per layer. The first layer takes the primary dimension: the one whose branches lead to different actions. A dimension that changes nothing you would do is a column, not a split.
 - Overlap test: an item that fits two boxes means mixed dimensions. Gap test: add "other"; if it is large or vague, a box is missing.
@@ -58,13 +58,13 @@ Artifact: the tree. It becomes the evidence section of the delivery.
 
 ## 5. Adversarial review
 
-Switch sides; the aim is to break it.
+Critical thinking asks whether the reasoning holds; adversarial review assumes it does not and tries to break it. Attack first, then critique.
 
 1. **Pre-mortem.** A year on, it failed completely. The three most likely causes.
 2. **Strongest opposition.** The best case for the opposite conclusion.
 3. **Flip conditions.** One to three facts that would reverse the conclusion. Verify the most important one now.
 
-Then: every number has a primary source and one definition; no survivorship bias; correlation not read as cause; nothing stale; each source's interest noted; no simpler option missed. Code: boundaries, failure paths, concurrency, security, tests actually run.
+Critique: every number has a primary source and one definition; no survivorship bias; correlation not read as cause; nothing stale; each source's interest noted; no simpler option missed. Code: boundaries, failure paths, concurrency, security, tests actually run.
 
 Grade **fatal / major / minor**. Fatal returns to the step that produced it; major is fixed or told to the user; minor is listed.
 
@@ -74,7 +74,7 @@ Artifact: graded findings.
 
 Do the least that answers the frame: nothing unrequested, change only what must change, and run a check (validator, test, dry run) rather than read one.
 
-Analysis: **Conclusion → Evidence (the tree) → Prior art → Assumptions → Where this is most likely wrong, with flip conditions → Next steps → Sources with dates**.
+Analysis: **Conclusion → Evidence (the tree) → Benchmarks → Assumptions → Where this is most likely wrong, with flip conditions → Next steps → Sources with dates**.
 
 Code: what changed, how it was verified, what risk remains.
 

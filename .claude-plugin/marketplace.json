@@ -1,12 +1,12 @@
 {
   "name": "careful",
   "owner": { "name": "okjesse" },
-  "description": "The careful skill for Claude Code: first principles, prior art, MECE, minimal execution, adversarial review.",
+  "description": "The careful skill for Claude Code: first principles, benchmarking, MECE structure, adversarial review.",
   "plugins": [
     {
       "name": "careful",
       "source": "./",
-      "description": "Rigorous decision and delivery process: first principles, prior art, MECE, minimal execution, adversarial review."
+      "description": "Rigorous decision and delivery process: first principles, benchmarking, MECE structure, adversarial review, conclusion-first delivery."
     }
   ]
 }
