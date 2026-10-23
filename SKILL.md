@@ -1,6 +1,6 @@
 ---
 name: careful
-description: Rigorous decision and delivery process for consequential work. Frames the problem, reduces it to verified facts (first principles), benchmarks the measured best and how it got there, structures the analysis MECE, attacks the result adversarially, and delivers conclusion-first with stated risks. Use for solution design, architecture and technology choices, research and benchmarking, business decisions, and any code change that costs money, ships to production, faces outside parties, or is hard to reverse. Also use when the user asks to think something through, wants to know how others solve it, asks what could go wrong, or asks for a sanity check (中文触发语：帮我想清楚、别人怎么做的、有什么坑、帮我把关). Skip for one-off, reversible tasks that take minutes.
+description: Rigorous decision and delivery process for consequential work. Frames the problem, reduces it to verified facts (first principles), benchmarks the measured best and how it got there, structures the analysis MECE, attacks the result adversarially, and delivers conclusion-first with stated risks. Use for solution design, architecture and technology choices, research and benchmarking, business decisions, and any code change that costs money, faces outside parties, or is hard to roll back once live. Also use when the user asks to think something through, wants to know how others solve it, asks what could go wrong, or asks for a sanity check (中文触发语：帮我想清楚、别人怎么做的、有什么坑、帮我把关). Skip for one-off, reversible tasks that take minutes.
 ---
 
 # Careful
@@ -14,7 +14,7 @@ Consequential work goes wrong in four ways. One principle closes each. Frame bef
 | Categories that overlap or leave gaps; a conclusion nobody can trace | 4. Structure (MECE) |
 | A result nobody tried to break | 5. Adversarial review |
 
-**Stakes.** Say the tier in one line before starting. Small (minutes, reversible): skip this skill. Medium (half a day or more, or affects other people): every step in short form. Large (money, production, outside parties, hard to reverse, security or compliance): full form, and the review goes to a subagent that sees the frame and the result but not the reasoning.
+**Stakes.** Say the tier in one line before starting. Small (minutes, reversible): skip this skill. Medium (half a day or more, or affects other people): every step in short form, one to three lines each; see [example.md](example.md). Large (money, production, outside parties, hard to reverse, security or compliance): full form, and step 5 goes to a subagent given only the frame sentence and the conclusion with its evidence, told to run step 5 and return graded findings.
 
 Reply in the user's language.
 
@@ -29,22 +29,22 @@ Artifact: the sentence.
 - **Essence.** Strip the current form and say what the thing fundamentally is: "X is a way to Y". Once the need is named, the current form is one option among several.
 - **Sort.** Facts (verifiable), assumptions (to check), conventions ("everyone does it this way"). A convention is not a fact; it goes to step 3 to be tested.
 - **Equation.** The goal as terms: revenue = traffic × conversion × order value. The terms become the first layer of step 4.
-- **Limit.** What physics, cost, and law allow. The gap to the limit is the opportunity; a plan past the limit is dead.
+- **Limit** (when one binds). What physics, cost, and law allow. The gap to the limit is the opportunity; a plan past the limit is dead.
 
-Artifact: the essence sentence, the three buckets, the equation, the limit.
+Artifact: the essence sentence, the three buckets, the equation, and the limit if one binds.
 
 ## 3. Benchmark
 
-Best practice means a benchmark: a named, measured best, studied for how it got there. Find it in four moves:
+Best practice means a benchmark: a named, measured best, studied for how it got there. The benchmark is a result or a method. Where results are noisy or luck-driven (investing, hiring, marketing), the method with the longest evidence record beats last year's winner. Find it in four moves:
 
 1. **Metric.** Take the success measure from the frame. No metric, no benchmark.
-2. **Leaderboard.** Find where that metric is ranked: market share, revenue, benchmarks, stars and downloads, awards, published case studies. No public ranking: use the best documented case you can find and say so. Pick the top one to three, plus one cross-industry analogue that solved the same essence (step 2).
+2. **Leaderboard.** For a method: the named methods with long-run evidence (research, decades of track record, standards). For a result: find where that metric is ranked: market share, revenue, benchmarks, stars and downloads, awards, published case studies. No public ranking: use the best documented case you can find and say so. Pick the top one to three, plus one cross-industry analogue that solved the same essence (step 2).
 3. **Reverse-engineer.** For each: what they did, why it worked, in practitioners' own words (post-mortems, talks, docs, code, issue trackers), read first-hand rather than via commentary.
 4. **Preconditions.** What they had that made it work, and whether we have it. Copy what transfers; no preconditions means a fashion, not a benchmark.
 
 A category ("top teams") is not a benchmark; a name is. Technical work searches before writing (`gh search repos`, web search by stars and recent push), checks maintained, used, licensed, and decides **adopt / adapt / build**; build needs a written reason. Two independent, dated, primary sources per load-bearing claim. Stop when more research would not change the decision.
 
-Artifact: the benchmarks with metric, source and date, what transfers, and the decision.
+Artifact: the benchmarks (result or method) with metric, source and date, what transfers, and the decision.
 
 ## 4. Structure (MECE)
 
