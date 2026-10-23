@@ -35,16 +35,16 @@ Artifact: the essence sentence, the three buckets, the equation, and the limit i
 
 ## 3. Benchmark
 
-Best practice means a benchmark: a named, measured best, studied for how it got there. Find it in four moves:
+Best practice means a benchmark: a named, measured best, studied for how it got there. The benchmark is a result or a method. Where results are noisy or luck-driven (investing, hiring, marketing), the method with the longest evidence record beats last year's winner. Find it in four moves:
 
 1. **Metric.** Take the success measure from the frame. No metric, no benchmark.
-2. **Leaderboard.** Find where that metric is ranked: market share, revenue, benchmarks, stars and downloads, awards, published case studies. No public ranking: use the best documented case you can find and say so. Pick the top one to three, plus one cross-industry analogue that solved the same essence (step 2).
+2. **Leaderboard.** For a method: the named methods with long-run evidence (research, decades of track record, standards). For a result: find where that metric is ranked: market share, revenue, benchmarks, stars and downloads, awards, published case studies. No public ranking: use the best documented case you can find and say so. Pick the top one to three, plus one cross-industry analogue that solved the same essence (step 2).
 3. **Reverse-engineer.** For each: what they did, why it worked, in practitioners' own words (post-mortems, talks, docs, code, issue trackers), read first-hand rather than via commentary.
 4. **Preconditions.** What they had that made it work, and whether we have it. Copy what transfers; no preconditions means a fashion, not a benchmark.
 
 A category ("top teams") is not a benchmark; a name is. Technical work searches before writing (`gh search repos`, web search by stars and recent push), checks maintained, used, licensed, and decides **adopt / adapt / build**; build needs a written reason. Two independent, dated, primary sources per load-bearing claim. Stop when more research would not change the decision.
 
-Artifact: the benchmarks with metric, source and date, what transfers, and the decision.
+Artifact: the benchmarks (result or method) with metric, source and date, what transfers, and the decision.
 
 ## 4. Structure (MECE)
 
