@@ -12,8 +12,8 @@ Six steps, each ending in an artifact the user can see:
 2. **First principles**: what the thing fundamentally is; facts vs assumptions vs conventions; the goal as an equation; the theoretical limit.
 3. **Benchmark**: take the metric from the frame, find who ranks best on it, reverse-engineer how they did it, check whether we have their preconditions. Adopt / adapt / build.
 4. **Structure (MECE)**: one dimension per layer, the primary dimension first, overlap test, gap test.
-5. **Adversarial review**: pre-mortem, strongest opposition, flip conditions. Findings graded fatal / major / minor.
-6. **Deliver**: the least that answers the frame, verified by running checks. Conclusion first, then evidence, prior art, assumptions, where it is most likely wrong, next steps, sources.
+5. **Adversarial review**: pre-mortem, strongest opposition, flip conditions. Then a critical check of sources and logic. Findings graded fatal / major / minor.
+6. **Deliver**: the least that answers the frame, verified by running checks. Conclusion first, then evidence, benchmarks, assumptions, where it is most likely wrong, next steps, sources.
 
 Depth scales with stakes. Small, reversible tasks skip the skill entirely. Large tasks send the attack to an independent subagent.
 

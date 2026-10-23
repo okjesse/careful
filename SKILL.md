@@ -31,14 +31,14 @@ Artifact: the sentence.
 - **Equation.** The goal as terms: revenue = traffic × conversion × order value. The terms become the first layer of step 4.
 - **Limit.** What physics, cost, and law allow. The gap to the limit is the opportunity; a plan past the limit is dead.
 
-Artifact: the essence sentence, the three buckets, the equation.
+Artifact: the essence sentence, the three buckets, the equation, the limit.
 
 ## 3. Benchmark
 
 Best practice means a benchmark: a named, measured best, studied for how it got there. Find it in four moves:
 
 1. **Metric.** Take the success measure from the frame. No metric, no benchmark.
-2. **Leaderboard.** Find where that metric is ranked: market share, revenue, benchmarks, stars and downloads, awards, published case studies. Pick the top one to three, plus one cross-industry analogue that solved the same essence (step 2).
+2. **Leaderboard.** Find where that metric is ranked: market share, revenue, benchmarks, stars and downloads, awards, published case studies. No public ranking: use the best documented case you can find and say so. Pick the top one to three, plus one cross-industry analogue that solved the same essence (step 2).
 3. **Reverse-engineer.** For each: what they did, why it worked, in practitioners' own words (post-mortems, talks, docs, code, issue trackers), read first-hand rather than via commentary.
 4. **Preconditions.** What they had that made it work, and whether we have it. Copy what transfers; no preconditions means a fashion, not a benchmark.
 
@@ -58,7 +58,7 @@ Artifact: the tree. It becomes the evidence section of the delivery.
 
 ## 5. Adversarial review
 
-Critical thinking asks whether the reasoning holds; adversarial review assumes it does not and tries to break it. Do both, critique last.
+Critical thinking asks whether the reasoning holds; adversarial review assumes it does not and tries to break it. Attack first, then critique.
 
 1. **Pre-mortem.** A year on, it failed completely. The three most likely causes.
 2. **Strongest opposition.** The best case for the opposite conclusion.
@@ -74,7 +74,7 @@ Artifact: graded findings.
 
 Do the least that answers the frame: nothing unrequested, change only what must change, and run a check (validator, test, dry run) rather than read one.
 
-Analysis: **Conclusion → Evidence (the tree) → Prior art → Assumptions → Where this is most likely wrong, with flip conditions → Next steps → Sources with dates**.
+Analysis: **Conclusion → Evidence (the tree) → Benchmarks → Assumptions → Where this is most likely wrong, with flip conditions → Next steps → Sources with dates**.
 
 Code: what changed, how it was verified, what risk remains.
 
